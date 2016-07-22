@@ -4,6 +4,6 @@
     SQLAlchemy
 
 # note
-util/ 如名
-handler/ 存储各种hanler，添加后，在manager.py中指明对应的route
-将数据库操作api放到modules中，
+* util/ 如名
+* handler/ 存储各种hanler，添加后，在manager.py中指明对应的route
+* 将数据库操作api放到modules中，
