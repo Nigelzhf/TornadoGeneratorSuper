@@ -2,6 +2,7 @@ tornado
 
 sqlalchemy
 PyMySQL
+redis
 
 celery
 tornado-celery
