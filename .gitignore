@@ -1,6 +1,3 @@
-# pycharm
-.idea/
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -12,7 +9,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
-venv/
 build/
 develop-eggs/
 dist/
@@ -91,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# pycharm
+.idea/
+
+# log
+log/

@@ -1,6 +1,11 @@
 # -*- coding:utf-8 -*-
 
-HTTPServerPort = 8000
+import logging
 
-DEBUG = False
+
+DEBUG = True
 Security = True # xsrf_cookies
+
+LOG_POSITION = './log/log.log'
+LOG_FORMAT = '[%(asctime)s] %(name)s %(levelname)-8s %(message)s'
+LOG_LEVAL = logging.INFO

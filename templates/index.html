@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <p>Hello {{ user or "World" }}</p>
+    <p>Hello {{ username or "World" }}</p>
     <form action="/logout" method="post">
     {% raw xsrf_form_html() %}
     <input type="submit" value="LogOut">

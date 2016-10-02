@@ -1,1 +1,8 @@
 tornado
+
+sqlalchemy
+PyMySQL
+
+celery
+tornado-celery
+tornado-redis
