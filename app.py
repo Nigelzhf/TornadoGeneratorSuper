@@ -1,6 +1,9 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 #
-# Copyright @ 2014 Mitchell Chu
+# Copyright @ 2016 Exborn
+# 
 
 import os
 import tornado.web

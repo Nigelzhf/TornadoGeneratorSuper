@@ -1,15 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="左侧菜单，移动端隐藏。">
+
+    <title>{{ option['title'] }}</title>
+
+    {#<link rel="stylesheet" href="{{ static_url("css/pure.css") }}" media="screen" title="no title" charset="utf-8">#}
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="{{ static_url("css/layouts/side-menu-old-ie.css") }}">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="{{ static_url("css/layouts/side-menu.css") }}">
+    <!--<![endif]-->
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e12d6d03ce6ea69fb085e36b6e50aaa3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
 </head>
 <body>
-    <p>Hello {{ option['username'] or "World" }}</p>
-    {% if option['is_signed'] %}
-        <a href="/logout">logout</a>
-    {% else %}
-        <a href="/login">login</a><br>
-    {% end %}
+
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu pure-menu-open">
+            <a class="pure-menu-heading" href="#">Company</a>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+{#                <li class="menu-item-divided pure-menu-selected">#}
+{#                    <a href="#">Services</a>#}
+{#                </li>#}
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+                <li class="menu-item-divided pure-menu-selected">
+                    {% if option['is_signed'] %}
+                        <a href="/logout">logout</a>
+                    {% else %}
+                        <a href="/login">login</a>
+                    {% end %}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    {#  @main  #}
+    <div id="main">
+        <div class="header">
+            <h1>{{ option['title'] }}</h1>
+            <h2>{{ option['title'] }}</h2>
+        </div>
+
+        <div class="content">
+            <p>左侧菜单栏显示 <strong>功能列表</strong> 以及 <strong>登陆</strong> <strong>登出</strong></p>
+            <p>Hello {{ option['username'] or "World" }}</p>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="{{ static_url("js/ui.js") }}"></script>
 </body>
 </html>

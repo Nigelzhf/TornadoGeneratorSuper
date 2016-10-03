@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>SignIn Page</title>
+    <link rel="stylesheet" href="{{ static_url("css/pure.css") }}" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{{ static_url("css/style.css") }}" media="screen" title="no title" charset="utf-8">
+    <style>
+        .login {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 50%;
+            height: 30%;
+            margin: auto;
+        }
+    </style>
+</head>
 <body>
+<main class="main">
 
-<form action="/login" method="post">
+<form class="login pure-form pure-form-aligned" action="/login" method="post">
+  <fieldset>
     {% raw xsrf_form_html() %}
-    username: <input type="text" name="username">
-    password: <input type="password" name="password">
-    <input type="submit" value="Sign in">
+    <div class="pure-control-group">
+        <label for="">SignIn</label>
+    </div>
+    <div class="pure-control-group">
+      <label for="name">Username:</label>
+      <input id="name" name="username" type="text" placeholder="Username">
+    </div>
+
+    <div class="pure-control-group">
+      <label for="password">Password:</label>
+      <input id="password" name="password" type="password" placeholder="Password">
+    </div>
+
+    <div class="pure-controls">
+      <button type="submit" class="pure-button pure-button-primary">Submit</button>
+    </div>
+  </fieldset>
 </form>
+</main>
 
 </body>
 </html>

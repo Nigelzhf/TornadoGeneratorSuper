@@ -20,7 +20,12 @@ class MainHandler(BaseHandler):
         username = self.get_secure_cookie('username')
         print('when main' + str(self.session.session))
         is_signed = self.get_secure_cookie('id')
-        self.render("index.html", option={'username':username, 'is_signed':is_signed})
+        option = {
+            'username':username,
+            'is_signed':is_signed,
+            'title': 'Main Test Page',
+        }
+        self.render("index.html", option=option)
 
 
 class LoginHandler(BaseHandler):
@@ -60,13 +65,13 @@ class LogoutHandler(BaseHandler):
         uid = self.get_current_user()
         self.session.session = {}
         self.clear_all_cookies()
-        self.redirect("/login")
+        self.redirect("/")
 
     def post(self):
         uid = self.get_current_user()
         self.session.session = {}
         self.clear_all_cookies()
-        self.redirect("/login")
+        self.redirect("/")
 
 
 if config.DEBUG:
