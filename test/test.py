@@ -1,5 +1,3 @@
-import uuid
-name = "test_name"
-namespace = "test_namespace"
+from handler import *
 
-print(uuid.uuid1())
+print(signin_('test', 'test'))
